@@ -1,0 +1,26 @@
+use master;
+CREATE TABLE ChocolateProducts (
+    ProductId int PRIMARY KEY,
+    ProductName nvarchar(50) NOT NULL,
+    Price decimal(10,2) NOT NULL,
+    Category nvarchar(50) NOT NULL
+)
+
+INSERT INTO ChocolateProducts (ProductId, ProductName, Price, Category)
+VALUES (1, 'Dark Chocolate', 120, 'Chocolate'),
+       (2, 'White Chocolate', 100, 'Chocolate'),
+       (3, 'Milk Chocolate', 90, 'Chocolate'),
+       (4, 'Fruit&Nut Chocolate', 110, 'Chocolate')
+
+
+
+select * from ChocolateProducts
+
+
+
+
+CREATE PROCEDURE GetChocolateProducts
+AS
+BEGIN
+    SELECT * FROM ChocolateProducts WHERE Category = 'Chocolate'
+END
